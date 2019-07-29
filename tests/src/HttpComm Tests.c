@@ -10,8 +10,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "ArrayTest.h"
 
 int main(void) {
+	testArray();
+
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
 	return EXIT_SUCCESS;
 }

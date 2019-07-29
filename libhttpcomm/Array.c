@@ -48,3 +48,34 @@ void* Array_itemVoid(Array *a, unsigned short idx) {
 	}
 	return a->data + (a->itemSize * idx);
 }
+
+unsigned short Array_pull(Array *a){
+	if (a->count == 0){
+		return 0;
+	}
+	a->count--;
+	return a->count+1;
+}
+
+unsigned short Array_reduce(Array* a){
+	unsigned short ret;
+	if (a->count == 0 || a->data == NULL){
+		ret = a->capacity;
+		Array_clear(a);
+		return ret;
+	}
+	unsigned short newcap = ((a->count / a->chunkSize) + 1) * a->chunkSize;
+	if (newcap >= a->capacity){
+		return 0;
+	}
+
+	ret = a->capacity - newcap;
+
+	void *old = a->data;
+	a->capacity = newcap;
+	a->data = malloc(a->itemSize * a->capacity);
+	memcpy(a->data, old, a->itemSize * a->count);
+	free(old);
+
+	return ret;
+}

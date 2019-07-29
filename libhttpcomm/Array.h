@@ -5,10 +5,10 @@
  *      Author: jack
  */
 
-#ifndef SRC_ARRAY_H_
-#define SRC_ARRAY_H_
+#ifndef LIBHTTPCOMM_ARRAY_H_
+#define LIBHTTPCOMM_ARRAY_H_
 
-#include "Utils.h"
+//#include "Utils.h"
 #include <stddef.h>
 
 typedef struct {
@@ -114,10 +114,13 @@ void* Array_lastVoid(Array* a);
 
 
 unsigned short Array_pull(Array* a);
+
 /**
  * Attempt to reduce capacity to decrease memory usage by the array
+ * @param a Array to be reduced
+ * @return amount of capacity reduced
  */
 unsigned short Array_reduce(Array* a);
 
 
-#endif /* SRC_ARRAY_H_ */
+#endif /* LIBHTTPCOMM_ARRAY_H_ */

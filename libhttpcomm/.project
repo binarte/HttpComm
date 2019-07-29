@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HttpComm-Tests</name>
+	<name>HttpComm-Library</name>
 	<comment></comment>
 	<projects>
-		<project>HttpComm-Library</project>
+		<project>HttpComm</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
